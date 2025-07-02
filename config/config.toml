@@ -1,0 +1,47 @@
+# --- Undulator properties ---
+[undulator]
+length = 1.55  # total undulator length [m]
+period = 28.4e-3  # undulator period [m]
+k = 2.5245  # strength (dimensionless)
+phase = 0.0  # initial phase [rad]
+field_dir = "v"  # direction: 'v' for vertical, 'h' for horizontal
+
+[undulator.position]
+x = 0.0  # horizontal center position [m]
+y = 0.0  # vertical center position [m]
+z = 0.0  # longitudinal center position [m]
+
+# --- Beam properties ---
+[beam]
+avg_current = 3e-3  # CESR one bunch current at 145 mA in 9x5
+ptl_mass = 510998.90221  # electron (positron) mass [eV]
+ptl_energy = 6e9  # [eV]
+ptl_n = 1  # number of particle to simulate for the point-like beam
+# method = "custom_conv"  # Options: 'mc', 'custom_conv', 'srw_conv'
+
+[beam.sigma]
+z = 0 # 8.208e-4  # relative std dev energy spread
+x = 555e-6  # horizontal size [m]
+xp = 50.14e-6  # horizontal angular divergence [rad]
+y = 29.04e-6  # vertical size [m]
+yp = 10.25e-6  # vertical angular divergence [rad]
+
+[beam.init]
+x = 0.0  # initial horizontal position [m]
+y = 0.0  # initial vertical position [m]
+xp = 0.0  # initial horizontal angle
+yp = 0.0  # initial vertical angle
+
+# --- Simulation parameters ---
+[simulation]
+detector_z = 10.0  # detector longitudinal position along z [m]
+
+[simulation.mesh.x]
+min = -0.0025  # [m]
+max = 0.0025  # [m]
+n = 250  # number of points
+
+[simulation.mesh.y]
+min = -0.0015  # [m]
+max = 0.0015  # [m]
+n = 250  # number of points
