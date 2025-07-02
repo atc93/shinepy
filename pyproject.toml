@@ -1,0 +1,27 @@
+[project]
+name = "shinepy"
+version = "0.0.0"
+description = "A shining example Python package"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE",]
+authors = [{name = "Antoine Chapelain", email = "atc93@cornell.edu"}]
+dependencies = []
+
+[tool.setuptools.packages.find]
+include = ["shinepy"]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.isort]
+profile = "black"
+line_length = 99
+known_first_party = ["beam", "undulator", "mesh", "wavefront", "radiation", "helper"]
+
+[tool.black]
+line-length = 99
+target-version = ['py312']
+skip-string-normalization = true
+
